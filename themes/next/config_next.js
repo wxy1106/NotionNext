@@ -5,11 +5,11 @@ const CONFIG_NEXT = {
 
   NAV_TYPE: 'normal', // ['fixed','autoCollapse','normal'] 分别是固定屏幕顶部并始终显示、固定屏幕顶部且滚动时隐藏，不固定屏幕顶部
 
-  POST_LIST_COVER: false, // 文章列表显示封面图
+  POST_LIST_COVER: true, // 文章列表显示封面图
   POST_LIST_PREVIEW: true, // 显示文章预览
-  POST_LIST_SUMMARY: false, // 显示用户自定义摘要，有预览时优先只展示预览
+  POST_LIST_SUMMARY: true, // 显示用户自定义摘要，有预览时优先只展示预览
 
-  POST_HEADER_IMAGE_VISIBLE: false, // 文章详情页是否显示封面图
+  POST_HEADER_IMAGE_VISIBLE: true, // 文章详情页是否显示封面图
 
   // 右侧组件
   RIGHT_BAR: true, // 是否显示右侧栏
@@ -31,7 +31,7 @@ const CONFIG_NEXT = {
   WIDGET_TOC: true, // 移动端显示悬浮目录
 
   ARTICLE_SHARE: process.env.NEXT_PUBLIC_ARTICLE_SHARE || false, // 文章分享功能
-  ARTICLE_RELATE_POSTS: true, // 相关文章推荐
+  ARTICLE_RELATE_POSTS: false, // 相关文章推荐
   ARTICLE_COPYRIGHT: true // 文章版权声明
 
 }
