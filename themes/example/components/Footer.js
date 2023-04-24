@@ -13,11 +13,6 @@ export const Footer = (props) => {
 
   return <footer className="z-10 relative w-full bg-white px-6 border-t dark:border-hexo-black-gray dark:bg-hexo-black-gray ">
         <DarkModeButton className='text-center pt-4'/>
-        <span className='mx-1 animate-pulse'><i className='fas fa-heart' /></span> <a href={BLOG.LINK} className='underline font-bold '>{BLOG.AUTHOR}</a><br />
-        <span className='hidden busuanzi_container_site_pv'>
-          <i className='fas fa-eye' /><span className='px-1 busuanzi_value_site_pv'> </span> </span>
-        <span className='pl-2 hidden busuanzi_container_site_uv'>
-          <i className='fas fa-users' /> <span className='px-1 busuanzi_value_site_uv'> </span> </span>
         <div className="container mx-auto max-w-4xl py-6 md:flex flex-wrap md:flex-no-wrap md:justify-between items-center text-sm">
             <div className='text-center'> &copy;{`${copyrightDate}`} {BLOG.AUTHOR}. All rights reserved.</div>
             <div className="md:p-0 text-center md:text-right text-xs">
