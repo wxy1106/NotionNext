@@ -2,7 +2,7 @@ import BLOG from '@/blog.config'
 import BlogAround from './BlogAround'
 import Comment from '@/components/Comment'
 import RecommendPosts from './RecommendPosts'
-import ShareBar from './ShareBar'
+import ShareBar from '@/components/ShareBar'
 import TagItem from './TagItem'
 import formatDate from '@/lib/formatDate'
 import { useGlobal } from '@/lib/global'
@@ -20,9 +20,10 @@ import NotionIcon from '@/components/NotionIcon'
  * @returns
  */
 export default function ArticleDetail(props) {
-  const { post, recommendPosts, prev, next, showArticleInfo } = props
+  const { post, recommendPosts, prev, next } = props
   const url = BLOG.LINK + useRouter().asPath
   const { locale } = useGlobal()
+  const showArticleInfo = CONFIG_NEXT.ARTICLE_INFO
   const date = formatDate(post?.date?.start_date || post?.createdTime, locale.LOCALE)
 
   return (
@@ -94,6 +95,10 @@ export default function ArticleDetail(props) {
                 </section>
 
                 {showArticleInfo && <>
+
+                    {/* 分享 */}
+                    <ShareBar post={post} />
+
                     {/* 版权声明 */}
                     {post.type === 'Post' && <ArticleCopyright author={BLOG.AUTHOR} url={url} />}
 
@@ -124,7 +129,6 @@ export default function ArticleDetail(props) {
                                         ))}
                                     </div>
                                 )}
-                                <ShareBar post={post} />
                             </>
                         )}
                     </section>
